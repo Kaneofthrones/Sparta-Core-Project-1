@@ -1,0 +1,126 @@
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) { ... }
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767px) { ... }
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991px) { ... }
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199px) { ... }
+
+/* Extra large devices (large desktops)
+ No media query since the extra-large breakpoint has no upper bound on its width */
+
+ body {
+  background-image: url(assets/bg1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+audio {
+  display:none;
+  
+}
+
+#start {
+  display:block;
+  width:1rem;
+  height:1rem;
+  text-align:center;
+  position:relative;
+  margin:0 auto;
+  font-size:0.8rem;
+  color: rgb(240,240,200);
+  padding-top:95px;
+  
+    
+  
+}
+#start:hover {
+  cursor:pointer;
+}
+
+#fail {
+  display:block;
+  width:400px;
+  height:350px;
+  text-align:center;
+  position:relative;
+  margin:0 auto;
+  font-size:105px;
+  color:#ffffff;
+  padding-top:95px;
+  display:none;
+  
+    
+  
+}
+
+#fail span {
+  font-size:50px;
+}
+
+#fail:hover {
+  cursor:pointer;
+}
+
+#created {
+  position:fixed;
+  right:30px;
+  bottom:20px
+}
+
+#keyboard, #count {
+
+}
+
+#container {
+/*  width:450px;
+  position:relative;
+  margin:0 auto;*/
+}
+
+#count {
+  position:absolute;
+  top:200px;
+  left:183px;
+  font-size:40px;
+  color:#FFFFFF;
+  width:80px;
+  text-align:center;
+  
+}
+
+#keyboard {
+    position: relative;
+    display: inline-block;
+}
+
+.keys {
+  position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border: 182.14285714285714px solid;
+    border-color: grey;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 1rem;
+    left: 32.14285714285714px;
+    top: 32.14285714285714px;
+}
+
+ #sixth {
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border: 53.57142857142857px solid #222222;
+    border-radius: 53.57142857142857px;
+    left: 171.42857142857142px;
+    top: 171.42857142857142px;
+}
