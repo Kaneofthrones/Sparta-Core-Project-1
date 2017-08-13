@@ -21,7 +21,6 @@
 
 audio {
   display:none;
-  
 }
 
 #start {
@@ -33,11 +32,9 @@ audio {
   margin:0 auto;
   font-size:1.8rem;
   color: rgb(240,240,200);
-  padding-top:95px;
-  
-    
-  
+  padding-top:95px;   
 }
+
 #start:hover {
   cursor:pointer;
 }
@@ -52,10 +49,7 @@ audio {
   font-size:105px;
   color:#ffffff;
   padding-top:95px;
-  display:none;
-  
-    
-  
+  display:none; 
 }
 
 #fail span {
@@ -73,8 +67,8 @@ audio {
 }
 
 #keyboard {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .keys {
@@ -91,7 +85,6 @@ audio {
   left: 32.14285714285714px;
   top: 32.14285714285714px;
 }
-
 
 #count {
   display:inline-block;
