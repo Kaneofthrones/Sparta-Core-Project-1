@@ -22,7 +22,7 @@ var settings = {
     sequence: [], //array for the sequence
     round: 0,
     playNumber: 0,
-    speed: 800,
+    speed: 1000,
     clicked: 0
 }
 
@@ -31,33 +31,33 @@ $(document).ready(function() {
   var audio = $("#sound");
     function animate(divid) {
         // Increase round speed
-      if (settings.round > 1) {
-          settings.speed = 500
-        }
+      // if (settings.round > 1) {
+      //     settings.speed = 800
+      //   }
 
 //Logic to make keys light up in sequence and to play sounds
 
       if (divid == "a") {
         $("#a").css("border-color", "#a50be2");
-        $("#tune").attr("src", "assets/f-sharp.wav");
+        $("#tune").attr("src", "assets/scale-c6.wav");
         setTimeout(function() {
           $("#a").css("border-color", "#1d8ca3");
         }, 200);
     	} else if (divid == "b") {
         $("#b").css("border-color", "#a50be2");
-        $("#tune").attr("src", "assets/f-sharp.wav");
+        $("#tune").attr("src", "assets/scale-c7.wav");
         setTimeout(function() {
           $("#b").css("border-color", "#1d8ca3");
         }, 200);
     	} else if (divid == "c") {
         $("#c").css("border-color", "#a50be2");
-        $("#tune").attr("src", "assets/f-sharp.wav");
+        $("#tune").attr("src", "assets/scale-f6.wav");
         setTimeout(function() {
           $("#c").css("border-color", "#1d8ca3");
         }, 200);
     	} else if (divid == "d") {
         $("#d").css("border-color", "#a50be2");
-        $("#tune").attr("src", "assets/f-sharp.wav");
+        $("#tune").attr("src", "assets/scale-g6.wav");
         setTimeout(function() {
           $("#d").css("border-color", "#1d8ca3");
         }, 200);
@@ -67,7 +67,7 @@ $(document).ready(function() {
 
         audio[0].pause();
         audio[0].load();
-        audio[0].play();
+        //audio[0].play();
     }
 
 //function to randomise sequence 
@@ -131,13 +131,13 @@ $(document).ready(function() {
 
     $("#a, #b, #c, #d").on("click", function() {
         animate(this.id)
+        audio[0].play()
     });
     $("#start").on("click", function() {
         $("#start").hide();
         settings.round++;
         makeId(); // make id and play it
         $("#count").html(settings.round); //display score
-        //playit();
     });
     $("#fail").on("click", function() {
         $("#fail").hide();
