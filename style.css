@@ -72,27 +72,6 @@ audio {
   bottom:20px
 }
 
-#keyboard, #count {
-
-}
-
-#container {
-/*  width:450px;
-  position:relative;
-  margin:0 auto;*/
-}
-
-#count {
-  position:absolute;
-  top:200px;
-  left:183px;
-  font-size:40px;
-  color:#FFFFFF;
-  width:80px;
-  text-align:center;
-  
-}
-
 #keyboard {
     position: relative;
     display: inline-block;
@@ -100,27 +79,26 @@ audio {
 
 .keys {
   position: relative;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    border: 182.14285714285714px solid;
-    border-color: grey;
-    border-bottom: none;
-    border-right: none;
-    border-radius: 1rem;
-    left: 32.14285714285714px;
-    top: 32.14285714285714px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 182.14285714285714px solid;
+  border-color: #8ba7d6;
+  border-bottom: none;
+  border-right: none;
+  border-radius: 1rem;
+  left: 32.14285714285714px;
+  top: 32.14285714285714px;
 }
 
- #sixth {
-    position: absolute;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    border: 53.57142857142857px solid #222222;
-    border-radius: 53.57142857142857px;
-    left: 171.42857142857142px;
-    top: 171.42857142857142px;
+
+#count {
+  position:relative;
+  font-size:40px;
+  color:#FFFFFF;
+  width:80px;
+  text-align:center;
+  float:right;
+  margin:2rem;
 }
