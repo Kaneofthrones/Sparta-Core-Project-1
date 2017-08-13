@@ -31,7 +31,7 @@ audio {
   text-align:center;
   position:relative;
   margin:0 auto;
-  font-size:0.8rem;
+  font-size:1.8rem;
   color: rgb(240,240,200);
   padding-top:95px;
   
@@ -84,7 +84,7 @@ audio {
   height: 0;
   line-height: 0;
   border: 182.14285714285714px solid;
-  border-color: #8ba7d6;
+  border-color: rgba(29, 140, 163, 0.8);
   border-bottom: none;
   border-right: none;
   border-radius: 1rem;
@@ -94,11 +94,13 @@ audio {
 
 
 #count {
-  position:relative;
-  font-size:40px;
-  color:#FFFFFF;
-  width:80px;
+  display:inline-block;
+  width:10px;
+  height:1rem;
   text-align:center;
-  float:right;
-  margin:2rem;
+  position:relative;
+  margin:0 auto;
+  font-size:1.8rem;
+  color: rgb(240,240,200);
+  padding-top:3rem;
 }

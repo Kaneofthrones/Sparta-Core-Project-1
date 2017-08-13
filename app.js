@@ -1,6 +1,6 @@
 // //pseudo code
 
-// //audio
+// //I have left in this code as I plan on using it later, but for now I will leave it out
 // (function() {
 //     // Create audio (context) container
 //     var audioCtx = new (AudioContext || webkitAudioContext)();
@@ -15,9 +15,7 @@
 //         71: { noteName: 'g4', frequency: 392, keyName: 'g' },
 //     };
 
-// //array of the keys
 
-// //function to make keys 
 
 
 
@@ -61,7 +59,7 @@ var settings = {
     sequence: [],
     round: 0,
     playNumber: 0,
-    speed: 1000,
+    speed: 800,
     clicked: 0
 
 }
@@ -78,42 +76,41 @@ $(document).ready(function() {
             settings.speed = 500
         }
 
+//Logic to make keys light up in sequence
+
         if (divid == "a") {
             $("#a").css("border-color", "#a50be2");
             $("#tune").attr("src", "assets/f-sharp.wav");
             setTimeout(function() {
-                $("#a").css("border-color", "#8ba7d6");
+                $("#a").css("border-color", "#1d8ca3");
             }, 200);
         } else if (divid == "b") {
             $("#b").css("border-color", "#a50be2");
             $("#tune").attr("src", "assets/f-sharp.wav");
             setTimeout(function() {
-                $("#b").css("border-color", "#8ba7d6");
+                $("#b").css("border-color", "#1d8ca3");
             }, 200);
         } else if (divid == "c") {
             $("#c").css("border-color", "#a50be2");
             $("#tune").attr("src", "assets/f-sharp.wav");
             setTimeout(function() {
-                $("#c").css("border-color", "#8ba7d6");
+                $("#c").css("border-color", "#1d8ca3");
             }, 200);
         } else if (divid == "d") {
             $("#d").css("border-color", "#a50be2");
             $("#tune").attr("src", "assets/f-sharp.wav");
             setTimeout(function() {
-                $("#d").css("border-color", "#8ba7d6");
+                $("#d").css("border-color", "#1d8ca3");
             }, 200);
         }
-
+//play, pause and load audio
         audio[0].pause();
         audio[0].load();
         audio[0].play();
 
     }
-
-
-
-
-    function makeid() {
+//function to randomise sequence 
+    function makeId() {
         var text = "";
         var possible = "abcd";
 
@@ -123,9 +120,7 @@ $(document).ready(function() {
 
         }
 
-
-
-
+//function to display a random pattern 
         function myLoop() {
             setTimeout(function() {
                 animate(settings.sequence[settings.playNumber]);
@@ -162,13 +157,10 @@ $(document).ready(function() {
                     settings.clicked++;
                 }
 
-
-
             } else {
                 console.log("WRONG");
                 $("#fail").show();
                 $("#fail").addClass("bigEntrance");
-                $("#tune").attr("src", "http://www.chiptape.com/chiptape/sounds/medium/MidwaySatanSOUND45.WAV");
                 audio[0].pause();
                 audio[0].load();
                 audio[0].play();
@@ -183,8 +175,6 @@ $(document).ready(function() {
 
     }
 
-
-
     //BEGIN GAME
 
     $("#a, #b, #c, #d").on("click", function() {
@@ -195,13 +185,9 @@ $(document).ready(function() {
         $("#keyboard, #count").css("filter");
         $("#keyboard, #count").css("-webkit-filter");
         settings.round++;
-        makeid(); // make id and play it
+        makeId(); // make id and play it
         $("#count").html(settings.round);
         //playit();
-
-
-
-
     });
 
     $("#fail").on("click", function() {
@@ -209,7 +195,7 @@ $(document).ready(function() {
         settings.sequence = [];
         settings.round = 0;
         settings.playNumber = 0,
-        settings.speed = 1000;
+        settings.speed = 800;
         settings.clicked = 0;
         $("#start").trigger("click");
     });
