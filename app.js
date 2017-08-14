@@ -15,7 +15,6 @@
 //         71: { noteName: 'g4', frequency: 392, keyName: 'g' },
 //     };
 
-
 //-------------------------------------------------------
 
 var settings = {
@@ -45,7 +44,7 @@ $(document).ready(function() {
         }, 200);
     	} else if (divid == "b") {
         $("#b").css("border-color", "#a50be2");
-        $("#tune").attr("src", "assets/scale-c7.wav");
+        $("#tune").attr("src", "assets/scale-d6.wav");
         setTimeout(function() {
           $("#b").css("border-color", "#1d8ca3");
         }, 200);
@@ -61,6 +60,12 @@ $(document).ready(function() {
         setTimeout(function() {
           $("#d").css("border-color", "#1d8ca3");
         }, 200);
+      } else if (divid == "e") {
+        $("#e").css("border-color", "#a50be2");
+        $("#tune").attr("src", "assets/scale-a6.wav");
+        setTimeout(function() {
+          $("#e").css("border-color", "#1d8ca3");
+        }, 200);
     	}
 
 //play, pause and load audio
@@ -74,8 +79,7 @@ $(document).ready(function() {
 
     function makeId() {
         var text = "";
-        var possible = "abcd";
-
+        var possible = "abcde";
         for (var i = 0; i < 1; i++) {
             text += possible.charAt(Math.floor(Math.random() * possible.length));
             settings.sequence.push(text);
@@ -102,10 +106,10 @@ $(document).ready(function() {
     //function to get check user input 
 
     function listen() {
-      $("#a, #b, #c, #d").on("mousedown", function() {
+      $("#a, #b, #c, #d, #e").on("mousedown", function() {
         if (this.id == settings.sequence[settings.clicked]) {
           if (settings.clicked === settings.sequence.length - 1) {
-            $("#a, #b, #c, #d").off("mousedown");
+            $("#a, #b, #c, #d, #e").off("mousedown");
               settings.clicked = 0;
               $("#start").trigger("click");
               } else {
@@ -122,14 +126,14 @@ $(document).ready(function() {
                 $("#keyboard, #count").css("filter");
                 $("#keyboard, #count").css("-webkit-filter");
                 settings.clicked = 0;
-                $("#a, #b, #c, #d").off("mousedown");
+                $("#a, #b, #c, #d, #e").off("mousedown");
             }
         });
     }
 
     //function to start game
 
-    $("#a, #b, #c, #d").on("click", function() {
+    $("#a, #b, #c, #d, #e").on("click", function() {
         animate(this.id)
         audio[0].play()
     });

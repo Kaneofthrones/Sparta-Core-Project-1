@@ -26,13 +26,13 @@ audio {
 #start {
   display:block;
   width:1rem;
-  height:1rem;
+  height:0.6rem;
   text-align:center;
   position:relative;
   margin:0 auto;
-  font-size:1.8rem;
+  font-size:1.4rem;
   color: rgb(240,240,200);
-  padding-top:95px;   
+  padding-top:1rem;   
 }
 
 #start:hover {
@@ -53,7 +53,7 @@ audio {
 }
 
 #fail span {
-  font-size:50px;
+  font-size:1.6rem;
 }
 
 #fail:hover {
@@ -97,3 +97,10 @@ audio {
   color: rgb(240,240,200);
   padding-top:3rem;
 }
+
+#score {
+
+}
+
+
+
