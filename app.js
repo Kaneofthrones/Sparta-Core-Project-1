@@ -25,14 +25,13 @@ var settings = {
     clicked: 0
 }
 
-
 $(document).ready(function() {
   var audio = $("#sound");
     function animate(divid) {
-        // Increase round speed
-      // if (settings.round > 1) {
-      //     settings.speed = 800
-      //   }
+    // Increase round speed
+    // if (settings.round > 1) {
+    //     settings.speed = 800
+    //   }
 
 //Logic to make keys light up in sequence and to play sounds
 
@@ -70,66 +69,93 @@ $(document).ready(function() {
 
 //play, pause and load audio
 
-        audio[0].pause();
-        audio[0].load();
-        //audio[0].play();
+      audio[0].pause();
+      audio[0].load();
+      //audio[0].play();
     }
 
 //function to randomise sequence 
 
-    function makeId() {
-        var text = "";
-        var possible = "abcde";
-        for (var i = 0; i < 1; i++) {
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-            settings.sequence.push(text);
-
+  function makeId() {
+    var text = "";
+    var possible = "abcde";
+      for (var i = 0; i < 1; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+        settings.sequence.push(text);
         }
 
 //function to display a random pattern and to loop through arrays
 
-        function myLoop() {
-            setTimeout(function() {
-                animate(settings.sequence[settings.playNumber]);
-                settings.playNumber++;
-                if (settings.playNumber < settings.sequence.length) {
-                    myLoop();
-                } else {
-                    settings.playNumber = 0;
-                    listen();
-                }
-            }, settings.speed)
-        }
+  function myLoop() {
+    setTimeout(function() {
+      animate(settings.sequence[settings.playNumber]);
+      settings.playNumber++;
+      if (settings.playNumber < settings.sequence.length) {
         myLoop();
-    }
+        } else {
+          settings.playNumber = 0;
+          listen();
+        }
+      }, settings.speed)
+  	}
+    myLoop();
+  }
 
     //function to get check user input 
 
-    function listen() {
-      $("#a, #b, #c, #d, #e").on("mousedown", function() {
-        if (this.id == settings.sequence[settings.clicked]) {
-          if (settings.clicked === settings.sequence.length - 1) {
-            $("#a, #b, #c, #d, #e").off("mousedown");
-              settings.clicked = 0;
-              $("#start").trigger("click");
-              } else {
-                console.log("Right!");
-                settings.clicked++;
-                }
-            	} else {
-                console.log("Wrong");
-                $("#fail").show();
-                $("#fail").addClass("bigEntrance");
-                audio[0].pause();
-                audio[0].load();
-                audio[0].play();
-                $("#keyboard, #count").css("filter");
-                $("#keyboard, #count").css("-webkit-filter");
-                settings.clicked = 0;
-                $("#a, #b, #c, #d, #e").off("mousedown");
+  function listen() {
+  	$("#a, #b, #c, #d, #e").on("mousedown", function() {
+      if (this.id == settings.sequence[settings.clicked]) {
+        if (settings.clicked === settings.sequence.length - 1) {
+          $("#a, #b, #c, #d, #e").off("mousedown");
+          settings.clicked = 0;
+          $("#start").trigger("click");
+          } else {
+            console.log("Right!");
+            settings.clicked++;
             }
-        });
-    }
+          } else {
+            console.log("Wrong");
+            $("#fail").show();
+            $("#fail").addClass("bigEntrance");
+            audio[0].pause();
+            audio[0].load();
+            audio[0].play();
+            $("#keyboard, #count").css("filter");
+            $("#keyboard, #count").css("-webkit-filter");
+            settings.clicked = 0;
+            $("#a, #b, #c, #d, #e").off("mousedown");
+        	}
+    });
+
+    //keyboard logic	
+    
+     // $("#a, #b, #c, #d, #e").on("keydown", function(){
+     // 	var key_code = event.keyCode;
+     // 		if(this.id == settings.sequence[settings.clicked]) {
+     // 			if(settings.clicked === settings.sequence.length - 1) {
+     // 				$("#a, #b, #c, #d, #e").off("keydown");
+     // 				settings.clicked = 0;
+     // 				$("#start").trigger("click");
+     // 			} else {
+     // 				console.log("Correct");
+     // 				settings.clicked++;
+     // 			}
+     // 			}
+     // 			else {
+     // 				console.log("Wrong");
+     //          $("#fail").show();
+     //          $("#fail").addClass("bigEntrance");
+     //          audio[0].pause();
+     //          audio[0].load();
+     //          audio[0].play();
+     //          $("#keyboard, #count").css("filter");
+     //          $("#keyboard, #count").css("-webkit-filter");
+     //          settings.clicked = 0;
+     //          $("#a, #b, #c, #d, #e").off("keydown");
+     // 			} 			
+     // })
+      }
 
     //function to start game
 
@@ -137,19 +163,31 @@ $(document).ready(function() {
         animate(this.id)
         audio[0].play()
     });
+
+    //keyboard input 
+
+    $("#a").onkeydown = function(event){ 
+    	var key_code = event.keyCode;
+    	if(key_code == 65) {
+    		animate(this.id)
+        audio[0].play()
+    	}
+    }
+
     $("#start").on("click", function() {
-        $("#start").hide();
-        settings.round++;
-        makeId(); // make id and play it
-        $("#count").html(settings.round); //display score
+      $("#start").hide();
+      settings.round++;
+      makeId(); // make id and play it
+      $("#count").html(settings.round); //display score
     });
+
     $("#fail").on("click", function() {
-        $("#fail").hide();
-        settings.sequence = [];
-        settings.round = 0;
-        settings.playNumber = 0,
-        settings.speed = 800;
-        settings.clicked = 0;
-        $("#start").trigger("click");
+      $("#fail").hide();
+      settings.sequence = [];
+      settings.round = 0;
+      settings.playNumber = 0,
+      settings.speed = 800;
+      settings.clicked = 0;
+      $("#start").trigger("click");
     });
 }); 
