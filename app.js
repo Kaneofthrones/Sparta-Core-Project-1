@@ -27,6 +27,7 @@ var settings = {
 
 $(document).ready(function() {
   var audio = $("#sound");
+  //function to display light sequence
     function animate(divid) {
     // Increase round speed
     // if (settings.round > 1) {
@@ -117,7 +118,6 @@ $(document).ready(function() {
           } else {
             console.log("Wrong");
             $("#fail").show();
-            $("#fail").addClass("bigEntrance");
             audio[0].pause();
             audio[0].load();
             audio[0].play();
@@ -126,10 +126,11 @@ $(document).ready(function() {
             settings.clicked = 0;
             $("#a, #b, #c, #d, #e").off("mousedown");
         	}
+              
     });
+	
 
     //keyboard logic	
-    
      // $("#a, #b, #c, #d, #e").on("keydown", function(){
      // 	var key_code = event.keyCode;
      // 		if(this.id == settings.sequence[settings.clicked]) {
@@ -160,20 +161,64 @@ $(document).ready(function() {
     //function to start game
 
     $("#a, #b, #c, #d, #e").on("click", function() {
-        animate(this.id)
-        audio[0].play()
+        animate(this.id);
+        audio[0].play();
     });
 
     //keyboard input 
-
-    $("#a").onkeydown = function(event){ 
-    	var key_code = event.keyCode;
-    	if(key_code == 65) {
-    		animate(this.id)
-        audio[0].play()
-    	}
+	document.addEventListener('keydown', function(event) {
+		//starting at the A key moving to the right
+    if(event.keyCode == 65) {
+    	$("#a").css("border-color", "#a50be2");
+      $("#tune").attr("src", "assets/scale-c6.wav");
+      audio[0].load();
+      audio[0].play();
+        console.log('a was pressed');
+        setTimeout(function() {
+         $("#a").css("border-color", "#1d8ca3");
+         }, 200);
+    } //S key
+    else if(event.keyCode == 83) {
+    	$("#b").css("border-color", "#a50be2");
+      $("#tune").attr("src", "assets/scale-d6.wav");
+      audio[0].load();
+      audio[0].play();
+      setTimeout(function() {
+        $("#b").css("border-color", "#1d8ca3");
+        }, 200);
+        console.log('s was pressed');
     }
-
+    else if(event.keyCode == 68) {
+    	$("#c").css("border-color", "#a50be2");
+      $("#tune").attr("src", "assets/scale-f6.wav");
+      audio[0].load();
+      audio[0].play();
+      setTimeout(function() {
+        $("#c").css("border-color", "#1d8ca3");
+        }, 200);
+        console.log('d was pressed');
+    }
+    else if(event.keyCode == 70) {
+    	$("#d").css("border-color", "#a50be2");
+      $("#tune").attr("src", "assets/scale-g6.wav");
+      audio[0].load();
+      audio[0].play();
+      setTimeout(function() {
+        $("#d").css("border-color", "#1d8ca3");
+        }, 200);
+        console.log('f was pressed');
+    }
+    else if(event.keyCode == 71) {
+    	$("#e").css("border-color", "#a50be2");
+      $("#tune").attr("src", "assets/scale-a6.wav");
+      audio[0].load();
+      audio[0].play();
+      setTimeout(function() {
+        $("#e").css("border-color", "#1d8ca3");
+        }, 200);
+        console.log('g was pressed');
+    }
+});
     $("#start").on("click", function() {
       $("#start").hide();
       settings.round++;
