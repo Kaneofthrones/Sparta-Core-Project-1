@@ -72,6 +72,8 @@ audio {
   position: relative;
   display: inline-block;
   width: 100%;
+  margin: 2rem 2rem 2rem 0;
+  padding-left: 2rem;
 }
 
 .keys {
@@ -83,7 +85,7 @@ audio {
   border-color: rgba(29, 140, 163, 0.8);
   border-bottom: none;
   border-radius: 3rem;
-  margin: 0.2rem;
+  margin: 0.4rem;
   margin-top: 2rem;
 }
 
