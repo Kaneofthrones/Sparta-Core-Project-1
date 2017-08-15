@@ -1,21 +1,8 @@
 // //pseudo code
 
-// //I have left in this code as I plan on using it later, but for now I will leave it out
-// (function() {
-//     // Create audio (context) container
-//     var audioCtx = new (AudioContext || webkitAudioContext)();
-
-//     // Table of notes with correspending keyboard codes. Frequencies are in hertz.
-//     // The notes start from middle C
-//     var notesByKeyCode = {
-//         65: { noteName: 'c4', frequency: 261.6, keyName: 'a' },
-//         83: { noteName: 'd4', frequency: 293.7, keyName: 's' },
-//         68: { noteName: 'e4', frequency: 329.6, keyName: 'd' },
-//         70: { noteName: 'f4', frequency: 349.2, keyName: 'f' },
-//         71: { noteName: 'g4', frequency: 392, keyName: 'g' },
-//     };
-
 //-------------------------------------------------------
+
+//object containing all the game settings
 
 var settings = {
     sequence: [], //array for the sequence
