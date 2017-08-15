@@ -82,7 +82,7 @@ $(document).ready(function() {
       for (var i = 0; i < 1; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
         settings.sequence.push(text);
-        }
+      }
 
 //function to display a random pattern and to loop through arrays
   function myLoop() {
@@ -114,12 +114,14 @@ $(document).ready(function() {
             }
           } else {
             console.log("Wrong");
-            $("#fail").show();
+            settings.highScore--;
+            console.log(settings.highScore);
+            $(".popups").show(); 
+            $("#count").hide();          
+            $("#showHighScore").html('highscore: ' + settings.highScore);
             audio[0].pause();
             audio[0].load();
             audio[0].play();
-            $("#keyboard, #count").css("filter");
-            $("#keyboard, #count").css("-webkit-filter");
             settings.clicked = 0;
             $("#a, #b, #c, #d, #e").off("mousedown");
         	}          
@@ -190,12 +192,14 @@ $(document).ready(function() {
       $("#start").hide();
       $("#infoScreen").hide();
       settings.round++;
+      settings.highScore++;
       makeId(); // make id and play it
-      $("#count").html('Round: ' + settings.round); //display score
+      $("#count").html('Round: ' + settings.round); //display current round
     });
 
     $("#fail").on("click", function() {
-      $("#fail").hide();
+      $(".popups").hide();
+      $("#count").show();
       settings.sequence = [];
       settings.round = 0;
       settings.playNumber = 0,
