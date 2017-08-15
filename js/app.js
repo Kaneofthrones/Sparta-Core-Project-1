@@ -23,7 +23,8 @@ var settings = {
     playNumber: 0,
     speed: 1000,
     clicked: 0,
-    highScore: 0
+    highScore: 0,
+    player: 0
 }
 
 $(document).ready(function() {
@@ -191,6 +192,7 @@ $(document).ready(function() {
     $("#start").on("click", function() {
       $("#start").hide();
       $("#infoScreen").hide();
+      $(".keys").css("margin-top", "6rem")
       settings.round++;
       settings.highScore++;
       makeId(); // make id and play it
