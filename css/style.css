@@ -1,12 +1,15 @@
 /* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575px) { ... }
+@media (max-width: 575px) { 
+
+ }
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767px) { ... }
 
 /* Medium devices (tablets, less than 992px) */
-@media (max-width: 991px) { ... }
+@media (min-width: 991px) { 
 
+}
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199px) { ... }
 
@@ -68,13 +71,14 @@ audio {
 #keyboard {
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 .keys {
   position: relative;
   display: inline-block;
-  width: 13rem;
-  height: 13rem;
+  width: 18%;
+  height: 8rem;
   border: 1.6rem solid;
   border-color: rgba(29, 140, 163, 0.8);
   border-bottom: none;
