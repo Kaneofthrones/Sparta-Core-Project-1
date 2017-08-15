@@ -14,7 +14,7 @@
  No media query since the extra-large breakpoint has no upper bound on its width */
 
  body {
-  background-image: url(assets/bg1.jpg);
+  background-image: url(../assets/bg1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   font-family:'Saira' 'Montserrat' sans-serif;
@@ -31,7 +31,9 @@ audio {
   margin:0 auto;
   font-size:1.8rem;
   color: rgb(240,240,200);
-  padding-top:0.6rem;   
+  padding-top:0.6rem;  
+  border: 2px solid yellow;
+  border-radius: 2rem;
 }
 
 #start:hover {
