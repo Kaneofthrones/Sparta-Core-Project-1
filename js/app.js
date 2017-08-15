@@ -24,7 +24,7 @@ var settings = {
     speed: 1000,
     clicked: 0,
     highScore: 0,
-    player: 0
+    player: 1
 }
 
 $(document).ready(function() {
@@ -116,10 +116,10 @@ $(document).ready(function() {
           } else {
             console.log("Wrong");
             settings.highScore--;
-            console.log(settings.highScore);
+            console.log(settings.player);
             $(".popups").show(); 
             $("#count").hide();          
-            $("#showHighScore").html('highscore: ' + settings.highScore);
+            $("#showHighScore").html('Player ' + settings.player + '  Highscore:  ' + settings.highScore);
             audio[0].pause();
             audio[0].load();
             audio[0].play();
@@ -193,6 +193,7 @@ $(document).ready(function() {
       $("#start").hide();
       $("#infoScreen").hide();
       $(".keys").css("margin-top", "6rem")
+      
       settings.round++;
       settings.highScore++;
       makeId(); // make id and play it
@@ -200,11 +201,17 @@ $(document).ready(function() {
     });
 
     $("#fail").on("click", function() {
+      settings.player++;
+      if(settings.player >= 2) {
+        settings.player = 1;
+      }
+
       $(".popups").hide();
       $("#count").show();
       settings.sequence = [];
+      settings.highScore = 0;
       settings.round = 0;
-      settings.playNumber = 0,
+      settings.playNumber = 0;
       settings.speed = 800;
       settings.clicked = 0;
       $("#start").trigger("click");
