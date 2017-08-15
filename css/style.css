@@ -93,11 +93,19 @@ audio {
   margin-bottom: 4rem;
 }
 
-/*#score  {
-	width: 20rem;
-	margin-bottom: 4rem;
-}*/
+#infoScreen {
+  background-color: rgba(10,10,10,0);
+  border: 2px solid yellow;
+  border-radius: 2rem;
+  overflow: scroll;
+  height: 12rem;
+  color: #d3d3d3;
+  word-wrap: break-word;
+}
 
+#infoTitle {
+  text-align: center;
+}
 
 
 

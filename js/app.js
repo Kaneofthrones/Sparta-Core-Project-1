@@ -188,6 +188,7 @@ $(document).ready(function() {
 });
     $("#start").on("click", function() {
       $("#start").hide();
+      $("#infoScreen").hide();
       settings.round++;
       makeId(); // make id and play it
       $("#count").html('Round: ' + settings.round); //display score
