@@ -13,11 +13,13 @@
 /* Extra large devices (large desktops)
  No media query since the extra-large breakpoint has no upper bound on its width */
 
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto|Saira");
+
  body {
   background-image: url(../assets/bg1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  font-family:'Saira' 'Montserrat' sans-serif;
+  font-family:'Saira', 'Montserrat', sans-serif;
 }
 
 audio {
