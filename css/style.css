@@ -34,7 +34,7 @@ audio {
   font-size:1.8rem;
   color: rgb(240,240,200);
   padding-top:0.6rem;  
-  border: 2px solid yellow;
+  border: 3px solid #F3A712;
   border-radius: 2rem;
 }
 
@@ -97,12 +97,13 @@ audio {
 
 #infoScreen {
   background-color: rgba(10,10,10,0);
-  border: 2px solid yellow;
+  border: 3px solid #F3A712;
   border-radius: 2rem;
   overflow: scroll;
   height: 12rem;
   color: #d3d3d3;
   word-wrap: break-word;
+  font-size: 1.2rem;
 }
 
 #infoTitle {
