@@ -9,14 +9,18 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto|Saira" rel="stylesheet">
 
     <!-- JS file -->
     <script type="text/javascript" src="app.js"></script>
     <title> Sparta Core Project 1</title>
   </head>
   <body>
-
     <div class="container-fluid">
         <div class="row" id="keyboard">
             <div id="first" class="col"></div>
@@ -27,13 +31,19 @@
             <div id="e" class="col keys"></div>
         </div>
         <div class="row" id="score">
-        	<div id="scoreDisplay" class="col align-self-center"></div>
-          <div id="count" class="col align-self-center">0</div>
+        	<!-- <div id="scoreDisplay" class="col ">Score:</div> -->
+          <div id="count" class="col ">
+          0
+          </div>
         </div>
     </div>
 
-    <div id="start" class="slideUp floating">click to <br>start</div>
-    <div id="fail">Game Over <br><span>click to retry</span></div>
+    <div id="start" class="slideUp floating">Click to 
+    	start
+    </div>
+    <div id="fail">Game Over 
+    	<span>click to retry</span>
+    </div>
     
     <audio controls id="sound">
         <source id="tune" src="assets/" type="audio/wav">
