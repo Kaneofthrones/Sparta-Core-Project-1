@@ -30,6 +30,7 @@ audio {
   display:block;
   text-align:center;
   position:relative;
+  width:20rem;
   margin:0 auto;
   font-size:1.8rem;
   color: rgb(240,240,200);
@@ -44,15 +45,16 @@ audio {
 
 #fail {
   display:block;
-  width:13rem;
-  height:2rem;
+  width:20rem;
   text-align:center;
   position:relative;
   margin:0 auto;
   font-size:1.8rem;
   color:#ffffff;
-  padding-top:95px;
   display:none; 
+  border: 4px solid #F3A712;
+  border-radius: 3rem;
+  word-wrap: break-word;
 }
 
 #fail span {
@@ -76,7 +78,6 @@ audio {
   border: 1.6rem solid;
   border-color: rgba(29, 140, 163, 0.8);
   border-bottom: none;
-  border-right: none;
   border-radius: 3rem;
   margin: 0.2rem;
   margin-top: 2rem;
