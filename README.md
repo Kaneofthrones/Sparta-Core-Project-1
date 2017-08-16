@@ -3,11 +3,12 @@ My first project for Sparta
 
 ***
 
-README 
+#README 
 
 ***
 
-Table of contents 
+##Table of contents 
+* 
 
 ***
 

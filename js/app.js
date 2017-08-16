@@ -179,8 +179,7 @@ $(document).ready(function() {
     $("#start").on("click", function() {
       $("#start").hide();
       $("#infoScreen").hide();
-      $(".keys").css("margin-top", "6rem")
-      
+      $(".keys").css("margin-top", "6rem") 
       settings.round++;
       settings.highScore++;
       makeId(); // make id and play it
@@ -189,7 +188,7 @@ $(document).ready(function() {
 
     $("#fail").on("click", function() {
       settings.player++;
-      if(settings.player >= 2) {
+      if(settings.player > 2) {
         settings.player = 1;
       }
 
