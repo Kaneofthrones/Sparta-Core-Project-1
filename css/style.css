@@ -1,5 +1,9 @@
 /* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575px) { ... }
+@media (max-width: 575px) { 
+  .keys {
+    width: 12%;
+  }
+}
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767px) { ... }
@@ -69,7 +73,7 @@ audio {
   position: relative;
   display: inline-block;
   width: 100%;
-  margin: 2rem 2rem 2rem 0;
+  margin: 2rem 0;
   padding-left: 2rem;
 }
 
@@ -106,6 +110,7 @@ audio {
   font-size: 1.8rem;
   text-align: center;
   color: rgb(240,240,200);
+  margin-bottom: 3rem;
 }
 
 #infoScreen {
@@ -123,6 +128,14 @@ audio {
   text-align: center;
   padding-top: 0.3rem;
   padding-bottom: 0.2rem
+}
+
+#wait {
+  display: inline-block;
+  height: 1rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: rgb(240,240,200);
 }
 
 /*----------------------Arrow Animation----------------------*/

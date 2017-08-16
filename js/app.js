@@ -12,8 +12,12 @@ var settings = {
     clicked: 0,
     highScore: -1,
     player: 1,
-    nextPlayer: 2
+    nextPlayer: 2,
+    highScoreSave1: 0,
+    highScoreSave2: 0
 }
+
+//-------------------------------------
 
 $(document).ready(function() {
   var audio = $("#sound");
@@ -26,6 +30,7 @@ $(document).ready(function() {
         console.log(settings.speed);
     });
   }
+  //call functions
   screenDisplay();
   startSequence();
   keyInput();
@@ -35,6 +40,8 @@ $(document).ready(function() {
     if (settings.round == 1 || settings.round == 3) {
         settings.speed -= 60;
     }
+
+  //-------------------------------------------------------
 
     //Logic to make keys light up in sequence and to play sounds
     if (divid == "a") {
@@ -74,6 +81,8 @@ $(document).ready(function() {
     audio[0].load();
   }
 
+  //----------------------------------------------
+
   //function to randomise sequence 
   function makeId() {
     var text = "";
@@ -83,22 +92,29 @@ $(document).ready(function() {
       text += possible.charAt(Math.floor(Math.random() * possible.length));
       settings.sequence.push(text);
     }
+    myLoop();
+  }
 
 //function to display a random pattern and to loop through arrays
+
     function myLoop() {
       setTimeout(function() {
         animate(settings.sequence[settings.playNumber]);
         settings.playNumber++;
         if(settings.playNumber < settings.sequence.length) {
           myLoop();
+          $("#wait").html("Get Ready");
         } else {
+          $("#wait").html("Go");
           settings.playNumber = 0;
           listen();
         }
       }, settings.speed)
   	}
-    myLoop();
-  }
+    
+  
+
+  //------------------------------------------------------
 
     //function to get check user input 
   function listen() {
@@ -108,6 +124,7 @@ $(document).ready(function() {
           $("#a, #b, #c, #d, #e").off("mousedown");
           settings.clicked = 0;
           $("#start").trigger("click");
+
         } else {
             console.log("Right!");
             settings.clicked++;
@@ -117,7 +134,8 @@ $(document).ready(function() {
           console.log(settings.player);
           $("#fail").html('Player ' + settings.nextPlayer + ' Click here to start');
           $(".popups").show(); 
-          $("#count").hide();          
+          $("#count").hide(); 
+          $("#wait").hide();         
           $("#showHighScore").html('Player ' + settings.player + '  Highscore:  ' + settings.highScore);
           $("#showCurrentPlayer").hide();
           audio[0].pause();
@@ -208,6 +226,7 @@ $(document).ready(function() {
       $("#showCurrentPlayer").show();
       $(".popups").hide();
       $("#count").show();
+      $("#wait").show();
       resetSettings();
       $("#start").trigger("click");
     });
