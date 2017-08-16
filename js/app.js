@@ -3,7 +3,6 @@
 //-------------------------------------------------------
 
 //object containing all the game settings
-
 var settings = {
     sequence: [], //array for the sequence
     round: 0,
@@ -13,8 +12,8 @@ var settings = {
     highScore: -1,
     player: 1,
     nextPlayer: 2,
-    highScoreSave1: 0,
-    highScoreSave2: 0
+    highScoreSaveP1: 0,
+    highScoreSaveP2: 0
 }
 
 //----------------------------------------------------
@@ -77,8 +76,7 @@ $(document).ready(function() {
         $("#e").css("border-color", "#1d8ca3");
       }, 200);
   	}
-
-	  //pause and load audio
+	  //pause and load audio for mouseclick
     audio[0].pause();
     audio[0].load();
   }
@@ -117,7 +115,7 @@ $(document).ready(function() {
 
   //------------------------------------------------------
 
-    //function to get check user input 
+  //function to get check user input 
   function listen() {
   	$("#a, #b, #c, #d, #e").on("mousedown", function() {
       if (this.id == settings.sequence[settings.clicked]) {
@@ -139,9 +137,7 @@ $(document).ready(function() {
           $("#wait").hide();         
           $("#showHighScore").html('Player ' + settings.player + '  Highscore:  ' + settings.highScore);
           $("#showCurrentPlayer").hide();
-          audio[0].pause();
-          audio[0].load();
-          audio[0].play();
+          playAudio(); 
           settings.clicked = 0;
           $("#a, #b, #c, #d, #e").off("mousedown");
         }              
@@ -152,6 +148,7 @@ $(document).ready(function() {
 
   //function to load and play audio
   function playAudio() {
+    audio[0].pause();
     audio[0].load();
     audio[0].play();
   }
@@ -225,9 +222,11 @@ $(document).ready(function() {
     $("#fail").on("click", function() {
       settings.player++;
       settings.nextPlayer--;
+      //if statement to change players
       if(settings.player > 2) {
         settings.player = 1;
-      } 
+      }
+      //counter to change text for next player 
       if(settings.nextPlayer < 1) {
         settings.nextPlayer = 2;
       }
@@ -251,5 +250,4 @@ $(document).ready(function() {
     settings.speed = 1000;
     settings.clicked = 0;
   }
-
 }); 
