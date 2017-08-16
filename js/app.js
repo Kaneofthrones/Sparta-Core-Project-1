@@ -10,8 +10,9 @@ var settings = {
     playNumber: 0,
     speed: 1000,
     clicked: 0,
-    highScore: 0,
-    player: 1
+    highScore: -1,
+    player: 1,
+    nextPlayer: 2
 }
 
 $(document).ready(function() {
@@ -113,11 +114,12 @@ $(document).ready(function() {
         }
       } else {
           console.log("Wrong");
-          settings.highScore--;
           console.log(settings.player);
+          $("#fail").html('Player ' + settings.nextPlayer + ' Click here to start');
           $(".popups").show(); 
           $("#count").hide();          
           $("#showHighScore").html('Player ' + settings.player + '  Highscore:  ' + settings.highScore);
+          $("#showCurrentPlayer").hide();
           audio[0].pause();
           audio[0].load();
           audio[0].play();
@@ -191,22 +193,33 @@ $(document).ready(function() {
       settings.highScore++;
       makeId(); // make id and play it
       $("#count").html('Round: ' + settings.round); //display current round
+      $("#showCurrentPlayer").html("Player " + settings.player + " score: -> " + settings.highScore);
     });
 
     $("#fail").on("click", function() {
       settings.player++;
+      settings.nextPlayer--;
       if(settings.player > 2) {
         settings.player = 1;
+      } 
+      if(settings.nextPlayer < 1) {
+        settings.nextPlayer = 2;
       }
+      $("#showCurrentPlayer").show();
       $(".popups").hide();
       $("#count").show();
-      settings.sequence = [];
-      settings.highScore = 0;
-      settings.round = 0;
-      settings.playNumber = 0;
-      settings.speed = 1000;
-      settings.clicked = 0;
+      resetSettings();
       $("#start").trigger("click");
     });
   }
+
+function resetSettings () {
+  settings.sequence = [];
+  settings.highScore = -1;
+  settings.round = 0;
+  settings.playNumber = 0;
+  settings.speed = 1000;
+  settings.clicked = 0;
+}
+
 }); 
