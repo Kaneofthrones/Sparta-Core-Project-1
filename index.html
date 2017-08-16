@@ -5,44 +5,91 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto|Saira" rel="stylesheet">
 
     <!-- JS file -->
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
     <title> Sparta Core Project 1</title>
   </head>
   <body>
-
     <div class="container-fluid">
-        <div class="row" id="keyboard">
-            <div id="first" class="col"></div>
-            <div id="a" class="col keys"></div>
-            <div id="b" class="col keys"></div>
-            <div id="c" class="col keys"></div>
-            <div id="d" class="col keys"></div>
-            <div id="e" class="col keys"></div>
-        </div>
-        <div class="row" id="score">
-        	<div id="scoreDisplay" class="col align-self-center"></div>
-          <div id="count" class="col align-self-center">0</div>
-        </div>
+      <div class="row-centered" id="keyboard">
+        <div id="first" class="col"></div>
+        <div id="a" class="col keys"></div>
+        <div id="b" class="col keys"></div>
+        <div id="c" class="col keys"></div>
+        <div id="d" class="col keys"></div>
+        <div id="e" class="col keys"></div>
+    	</div>
+
+      <div class="container" id="infoScreen">
+ 				<div class="center-con">
+    			<div class="round">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		        <span></span>
+    			</div>   
+				</div>
+
+      	<h3 id="infoTitle">Sparta Core Project 1 - Instructions</h3>
+      	<dl class="row">
+  				<dt class="col-sm-3">How to play</dt>
+  				<dd class="col-sm-9">
+  					<p>The keys will flash purple then return to light blue </p>
+  					<p>You need to click the keys in the order they are presented </p>
+  					<p>The sequence will start from the beginning each time. </p>
+  				</dd>
+
+ 	 				<dt class="col-sm-3">Tips</dt>
+  				<dd class="col-sm-9">
+    				<p>Be patient, don't click too soon after you finish a round </p>
+    				<p>The keys go up in pitch from left to right, learn to associate each key with the corresponsing sound</p>
+  				</dd>
+
+  				<dt class="col-sm-3">Keyboard / chillout mode</dt>
+  				<dd class="col-sm-9">
+  					<p>Use the 'a' 's' 'd' 'f' and 'g' keys to play the sounds without starting the game</p>
+  				</dd>
+    		</dl>
+      </div>
+
+      <div class="row" id="score">
+        <div id="count" class="col "></div>
+      </div>
+  	</div>
+
+    <div id="start" class="slideUp floating">Click to 
+    	start
     </div>
 
-    <div id="start" class="slideUp floating">click to <br>start</div>
-    <div id="fail">Game Over <br><span>click to retry</span></div>
-    
+    <div id="showHighScore" class="popups"> 
+    	HighScore: 
+    </div>
+
+    <div id="fail" class="popups">Game Over 
+    	<p></p>
+    </div>
+
     <audio controls id="sound">
-        <source id="tune" src="assets/" type="audio/wav">
+      <source id="tune" src="assets/" type="audio/wav">
     </audio>
   
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Popper.js, then Bootstrap JS -->
  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    
   </body>
 </html>
