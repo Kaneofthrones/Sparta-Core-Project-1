@@ -8,7 +8,10 @@ My first project for Sparta
 ***
 
 ##Table of contents 
-* 
+* Instructions
+* Task
+* Wireframes
+* Link
 
 ***
 
