@@ -204,7 +204,7 @@ $(document).ready(function() {
       settings.highScore = 0;
       settings.round = 0;
       settings.playNumber = 0;
-      settings.speed = 800;
+      settings.speed = 1000;
       settings.clicked = 0;
       $("#start").trigger("click");
     });

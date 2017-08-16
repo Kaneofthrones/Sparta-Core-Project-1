@@ -1,15 +1,11 @@
 /* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575px) { 
-
- }
+@media (max-width: 575px) { ... }
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767px) { ... }
 
 /* Medium devices (tablets, less than 992px) */
-@media (min-width: 991px) { 
-
-}
+@media (min-width: 991px) { ... }
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199px) { ... }
 
@@ -18,7 +14,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto|Saira");
 
- body {
+body {
   background-image: url(../assets/bg1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
