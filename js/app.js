@@ -22,18 +22,18 @@ $(document).ready(function() {
     $("#a, #b, #c, #d, #e").on("click", function() {
         animate(this.id);
         audio[0].play();
+        console.log(settings.speed);
     });
   }
   screenDisplay();
   startSequence();
   keyInput();
-  
   //function to display light sequence
   function animate(divid) {
-    // Increase round speed
-    // if (settings.round > 1) {
-    //     settings.speed = 800
-    //   }
+    //Increase round speed
+    if (settings.round == 1 || settings.round == 3) {
+        settings.speed -= 60;
+    }
 
     //Logic to make keys light up in sequence and to play sounds
     if (divid == "a") {
@@ -77,7 +77,7 @@ $(document).ready(function() {
   function makeId() {
     var text = "";
     var possible = "abcde";
-    
+
     for (var i = 0; i < 1; i++) {
       text += possible.charAt(Math.floor(Math.random() * possible.length));
       settings.sequence.push(text);
