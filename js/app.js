@@ -17,10 +17,12 @@ var settings = {
     highScoreSave2: 0
 }
 
-//-------------------------------------
+//----------------------------------------------------
 
 $(document).ready(function() {
   var audio = $("#sound");
+
+  //---------------------------------------------------
 
   //function to start game
   function startSequence() {
@@ -34,15 +36,15 @@ $(document).ready(function() {
   screenDisplay();
   startSequence();
   keyInput();
+
+  //----------------------------------------------------------
+
   //function to display light sequence
   function animate(divid) {
     //Increase round speed
     if (settings.round == 1 || settings.round == 3) {
         settings.speed -= 60;
     }
-
-  //-------------------------------------------------------
-
     //Logic to make keys light up in sequence and to play sounds
     if (divid == "a") {
       $("#a").css("border-color", "#a50be2");
@@ -95,24 +97,23 @@ $(document).ready(function() {
     myLoop();
   }
 
-//function to display a random pattern and to loop through arrays
+  //-------------------------------------------------------
 
-    function myLoop() {
-      setTimeout(function() {
-        animate(settings.sequence[settings.playNumber]);
-        settings.playNumber++;
-        if(settings.playNumber < settings.sequence.length) {
-          myLoop();
-          $("#wait").html("Get Ready");
-        } else {
-          $("#wait").html("Go");
-          settings.playNumber = 0;
-          listen();
-        }
-      }, settings.speed)
-  	}
-    
-  
+  //function to display a random pattern and to loop through arrays
+  function myLoop() {
+    setTimeout(function() {
+      animate(settings.sequence[settings.playNumber]);
+      settings.playNumber++;
+      if(settings.playNumber < settings.sequence.length) {
+        myLoop();
+        $("#wait").html("Get Ready");
+      } else {
+        $("#wait").html("Go");
+        settings.playNumber = 0;
+        listen();
+      }
+    }, settings.speed)
+	}
 
   //------------------------------------------------------
 
@@ -147,11 +148,15 @@ $(document).ready(function() {
     });
   }
 
+  //------------------------------------------------------
+
   //function to load and play audio
   function playAudio() {
     audio[0].load();
     audio[0].play();
   }
+
+  //-------------------------------------------------------
 
     //keyboard input 
   function keyInput(){
@@ -163,8 +168,7 @@ $(document).ready(function() {
         playAudio();
   	    setTimeout(function() {
   	    	$("#a").css("border-color", "#1d8ca3");
-  	    	}, 200);
-        
+  	    	}, 200);      
       } //S key
       else if(event.keyCode == 83) {
       	$("#b").css("border-color", "#a50be2");
@@ -201,8 +205,12 @@ $(document).ready(function() {
       }
     });
   }
+
+  //-----------------------------------------------------
+
   //function to handle start screen and game over screens
-  function screenDisplay() {  
+  function screenDisplay() { 
+    //Click to start button events 
     $("#start").on("click", function() {
       $("#start").hide();
       $("#infoScreen").hide();
@@ -213,7 +221,7 @@ $(document).ready(function() {
       $("#count").html('Round: ' + settings.round); //display current round
       $("#showCurrentPlayer").html("Player " + settings.player + " score: -> " + settings.highScore);
     });
-
+    //Next Player button events
     $("#fail").on("click", function() {
       settings.player++;
       settings.nextPlayer--;
@@ -232,13 +240,16 @@ $(document).ready(function() {
     });
   }
 
-function resetSettings () {
-  settings.sequence = [];
-  settings.highScore = -1;
-  settings.round = 0;
-  settings.playNumber = 0;
-  settings.speed = 1000;
-  settings.clicked = 0;
-}
+  //-----------------------------------------------
+
+  //function to reset game settings
+  function resetSettings () {
+    settings.sequence = [];
+    settings.highScore = -1;
+    settings.round = 0;
+    settings.playNumber = 0;
+    settings.speed = 1000;
+    settings.clicked = 0;
+  }
 
 }); 
