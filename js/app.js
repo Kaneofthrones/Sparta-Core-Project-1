@@ -88,7 +88,7 @@ $(document).ready(function() {
   function makeId() {
     var text = "";
     var possible = "abcde";
-
+    
     for (var i = 0; i < 1; i++) {
       text += possible.charAt(Math.floor(Math.random() * possible.length));
       settings.sequence.push(text);
@@ -272,7 +272,6 @@ $(document).ready(function() {
       settings.highScoreSaveP2 = 0;
       $("#finalScore").html("");
     }
-    console.log(settings.gameRound);
 
     //compare the scores of the first and second rounds and display the winner
     if((settings.highScoreSaveP1 > settings.highScoreSaveP2) && settings.gameRound == 2) {
