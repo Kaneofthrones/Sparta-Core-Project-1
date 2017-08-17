@@ -1,16 +1,3 @@
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575px) { ... }
-
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767px) { ... }
-
-/* Medium devices (tablets, less than 992px) */
-@media (min-width: 991px) { ... }
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199px) { ... }
-
-/* Extra large devices (large desktops)
- No media query since the extra-large breakpoint has no upper bound on its width */
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto|Saira");
 
@@ -25,6 +12,11 @@ audio {
   display:none;
 }
 
+.borders {
+  border: 4px solid #F3A712;
+  border-radius: 3rem;
+}
+
 #start {
   display:block;
   text-align:center;
@@ -34,8 +26,6 @@ audio {
   font-size:1.8rem;
   color: rgb(240,240,200);
   padding-top:0.6rem;  
-  border: 3px solid #F3A712;
-  border-radius: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -52,8 +42,6 @@ audio {
   font-size: 1.8rem;
   color: #ffffff;
   display: none; 
-  border: 4px solid #F3A712;
-  border-radius: 3rem;
   word-wrap: break-word;
 }
 
@@ -69,7 +57,7 @@ audio {
   position: relative;
   display: inline-block;
   width: 100%;
-  margin: 2rem 2rem 2rem 0;
+  margin: 2rem 0;
   padding-left: 2rem;
 }
 
@@ -85,6 +73,12 @@ audio {
   margin: 0.4rem;
   margin-top: 2rem;
   background-color: rgba(30, 140, 163, 0.6);
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 1rem;
+  color: #54F2F2;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
 }
 
 #count {
@@ -100,10 +94,17 @@ audio {
   margin-bottom: 4rem;
 }
 
+#showCurrentPlayer {
+  display: inline-block;
+  height: 1rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: rgb(240,240,200);
+  margin-bottom: 3rem;
+}
+
 #infoScreen {
   background-color: rgba(10,10,10,0);
-  border: 3px solid #F3A712;
-  border-radius: 2rem;
   overflow: scroll;
   height: 12rem;
   color: #d3d3d3;
@@ -115,6 +116,15 @@ audio {
   text-align: center;
   padding-top: 0.3rem;
   padding-bottom: 0.2rem
+}
+
+.textDisplay {
+  display: inline-block;
+  height: 1rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: rgb(240,240,200);
+  padding-right: 2rem;
 }
 
 /*----------------------Arrow Animation----------------------*/
@@ -189,4 +199,25 @@ span:nth-child(4) {
 
 .round:hover span:nth-child(4) {
     transform: rotate(-225deg);
+}
+
+/*---------------------Media Queries-------------------*/
+@media screen and (max-width: 600px) { 
+
+  .keys {
+    width: 18%;
+    padding-left: 0.6rem;
+    font-size: 1.6rem;
+    border: 1rem solid;
+    border-color: rgba(29, 140, 163, 0.8);
+    border-bottom: none;
+    border-radius: 3rem;
+    margin: 0.1rem;
+    margin-bottom: 4rem;
+    font-size: 0;
+  }
+
+  #keyboard {
+    padding-left: 0.5rem;
+  }
 }

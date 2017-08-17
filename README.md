@@ -9,9 +9,12 @@ My first project for Sparta
 
 ##Table of contents 
 * Instructions
-* Task
+* Requirements
+* Task (how it was approached)
 * Wireframes
-* Link
+* challenges
+* What I'm pleased with most
+* Livelink
 
 ***
 
