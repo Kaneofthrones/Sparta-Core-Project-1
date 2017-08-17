@@ -121,7 +121,6 @@ $(document).ready(function() {
   //first IF statement: If the key clicked is equal to the number of the 'clicked' variable and is equal to the same number in the sequence array
   //second IF statement: if the number in the 'clicked' variable is equal one less than the length of the sequence, the 'clicked' variable is set to 0 and the start div will be triggered on click otherwise the if the key clicked is equal to the key in the sequence and that key is clicked in the same order as in the array then proceed onto the next round, increment 'clicked' variable
   //second Else statement: increment the gameRound variable and apply fail conditions to the game changing the player and saving the highscore
-
   function listen() {
   	$("#a, #b, #c, #d, #e").on("mousedown", function() {
       if (this.id == settings.sequence[settings.clicked]) {
@@ -138,7 +137,7 @@ $(document).ready(function() {
           console.log("Wrong");
           displayHighscores();
           $("#fail").html('Player ' + settings.nextPlayer + ' Click here to start');
-          //change Next player display text
+          //change next player display text
           if(settings.gameRound == 2) {
             $("#fail").html("Start new game");
           }
@@ -159,7 +158,6 @@ $(document).ready(function() {
 
   //function to load and play audio
   function playAudio() {
-    //audio[0].pause();
     audio[0].load();
     audio[0].play();
   }
@@ -212,13 +210,16 @@ $(document).ready(function() {
           }, 200);
       }  //M key
       else if(event.keyCode == 77) {
-        $("#tune2").attr("src", "assets/Benedek_Breeze.mp3");
+        $("#tune2").attr("src", "assets/eresMia.mp3");
         bgAudio[0].load();
         bgAudio[0].play();
-      }
+      } //P key to pause music
       else if(event.keyCode == 80) {
         audio[0].pause();
         bgAudio[0].pause();
+      } //R key to resume music
+      else if(event.keyCode == 82) {
+        bgAudio[0].play();
       }
     });
   }
