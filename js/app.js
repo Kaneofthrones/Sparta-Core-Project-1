@@ -172,7 +172,7 @@ $(document).ready(function() {
 		//starting at the A key moving to the right
       if(event.keyCode == 65) {
         $("#a").css("border-color", "#a50be2");
-        $("#tune").attr("src", "assets/scale-c6.wav");
+        $("#tune").attr("src", "assets/kick.wav");
         playAudio();
   	    setTimeout(function() {
   	    	$("#a").css("border-color", "#1d8ca3");
@@ -180,7 +180,7 @@ $(document).ready(function() {
       } //S key
       else if(event.keyCode == 83) {
       	$("#b").css("border-color", "#a50be2");
-        $("#tune").attr("src", "assets/scale-d6.wav");
+        $("#tune").attr("src", "assets/bongo2.wav");
         playAudio();
         setTimeout(function() {
           $("#b").css("border-color", "#1d8ca3");
@@ -188,7 +188,7 @@ $(document).ready(function() {
       } //D key
       else if(event.keyCode == 68) {
       	$("#c").css("border-color", "#a50be2");
-        $("#tune").attr("src", "assets/scale-f6.wav");
+        $("#tune").attr("src", "assets/bongo3.wav");
         playAudio();
         setTimeout(function() {
           $("#c").css("border-color", "#1d8ca3");
@@ -197,7 +197,7 @@ $(document).ready(function() {
       } //F key
       else if(event.keyCode == 70) {
       	$("#d").css("border-color", "#a50be2");
-        $("#tune").attr("src", "assets/scale-g6.wav");
+        $("#tune").attr("src", "assets/bongo4.wav");
         playAudio();
         setTimeout(function() {
           $("#d").css("border-color", "#1d8ca3");
@@ -205,7 +205,7 @@ $(document).ready(function() {
       } //G key
       else if(event.keyCode == 71) {
       	$("#e").css("border-color", "#a50be2");
-        $("#tune").attr("src", "assets/scale-a6.wav");
+        $("#tune").attr("src", "assets/bongo5.wav");
         playAudio();
         setTimeout(function() {
           $("#e").css("border-color", "#1d8ca3");
