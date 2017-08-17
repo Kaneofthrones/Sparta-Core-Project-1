@@ -17,13 +17,13 @@ var settings = {
     gameRound: 0
 }
 
-//----------------------------------------------------
+  //-------------------------------------------------------
 
 $(document).ready(function() {
   var audio = $("#sound");
   var bgAudio = $("#bgMusic");
 
-  //---------------------------------------------------
+  //-------------------------------------------------------
 
   //function to start game
   function startSequence() {
@@ -83,7 +83,7 @@ $(document).ready(function() {
     audio[0].load();
   }
 
-  //----------------------------------------------
+  //-------------------------------------------------------
 
   //function to randomise sequence 
   function makeId() {
@@ -99,7 +99,7 @@ $(document).ready(function() {
 
   //-------------------------------------------------------
 
-  //function to display a random pattern and to loop through arrays
+  //function to display a random pattern and to loop through the sequence array
   function myLoop() {
     setTimeout(function() {
       animate(settings.sequence[settings.playNumber]);
@@ -115,7 +115,7 @@ $(document).ready(function() {
     }, settings.speed)
 	}
 
-  //------------------------------------------------------
+   //-------------------------------------------------------
 
   //function to get check user input
   //first IF statement: If the key clicked is equal to the number of the 'clicked' variable and is equal to the same number in the sequence array
@@ -167,7 +167,7 @@ $(document).ready(function() {
   //keyboard input 
   function keyInput(){
 	  document.addEventListener('keydown', function(event) {
-		//starting at the A key moving to the right
+		  //starting at the A key moving to the right
       if(event.keyCode == 65) {
         $("#a").css("border-color", "#a50be2");
         $("#tune").attr("src", "assets/kick.wav");
@@ -224,7 +224,7 @@ $(document).ready(function() {
     });
   }
 
-  //-----------------------------------------------------
+  //-------------------------------------------------------
 
   //function to handle start screen and game over screens
   function screenDisplay() { 
@@ -261,7 +261,7 @@ $(document).ready(function() {
     });
   }
 
-  //-----------------------------------------------
+  //-------------------------------------------------------
 
   //function to reset game settings
   function resetSettings () {
@@ -273,7 +273,7 @@ $(document).ready(function() {
     settings.clicked = 0;
   }
 
-  //----------------------------------------------------
+  //-------------------------------------------------------
 
   //function to display highscores at the end of each game
   function displayHighscores () {
