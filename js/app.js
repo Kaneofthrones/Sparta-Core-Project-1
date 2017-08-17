@@ -205,7 +205,7 @@ $(document).ready(function() {
           }, 200);
       }  //M key
       else if(event.keyCode == 77) {
-        $("#tune2").attr("src", "assets/eresMia.mp3");
+        $("#tune2").attr("src", "assets/Tumbao.mp3");
         bgAudio[0].load();
         bgAudio[0].play();
       } //P key to pause music
