@@ -33,10 +33,8 @@ $(document).ready(function() {
         console.log(settings.speed);
     });
   }
-  //call functions
-  screenDisplay();
-  startSequence();
-  keyInput();
+  //run the game
+  Run();
 
   //----------------------------------------------------------
 
@@ -118,12 +116,11 @@ $(document).ready(function() {
    //-------------------------------------------------------
 
   //function to get check user input
-  //first IF statement: If the key clicked is equal to the number of the 'clicked' variable and is equal to the same number in the sequence array
-  //second IF statement: if the number in the 'clicked' variable is equal one less than the length of the sequence, the 'clicked' variable is set to 0 and the start div will be triggered on click otherwise the if the key clicked is equal to the key in the sequence and that key is clicked in the same order as in the array then proceed onto the next round, increment 'clicked' variable
-  //second Else statement: increment the gameRound variable and apply fail conditions to the game changing the player and saving the highscore
   function listen() {
   	$("#a, #b, #c, #d, #e").on("mousedown", function() {
+      //If the key clicked is equal to the number of the 'clicked' variable and is equal to the same number in the sequence array
       if (this.id == settings.sequence[settings.clicked]) {
+        //If the number in the 'clicked' variable is equal one less than the length of the sequence, the 'clicked' variable is set to 0 and the start div will be triggered on click otherwise the if the key clicked is equal to the key in the sequence and that key is clicked in the same order as in the array then proceed onto the next round, increment 'clicked' variable
         if (settings.clicked === settings.sequence.length - 1) {
           $("#a, #b, #c, #d, #e").off("mousedown");
           settings.clicked = 0;
@@ -132,6 +129,7 @@ $(document).ready(function() {
             console.log("Right!");
             settings.clicked++;
         }
+        //Increment the gameRound variable and apply fail conditions to the game changing the player and saving the highscore
       } else {
           settings.gameRound++;
           console.log("Wrong");
@@ -298,5 +296,14 @@ $(document).ready(function() {
     } else if((settings.highScoreSaveP2 == settings.highScoreSaveP1) && settings.gameRound == 2) {
       $("#finalScore").html("Draw");
     }
+  }
+
+  //-------------------------------------------------------
+
+  //Call functions
+  function Run() {
+    screenDisplay();
+    startSequence();
+    keyInput();
   }
 }); 
