@@ -209,6 +209,14 @@ $(document).ready(function() {
         setTimeout(function() {
           $("#e").css("border-color", "#1d8ca3");
           }, 200);
+      }  //M key
+      else if(event.keyCode == 77) {
+        $("#tune").attr("src", "assets/scale-a6.wav");
+        playAudio();
+      }
+      else if(event.keyCode == 80) {
+        $("#tune").attr("src", "assets/scale-a6.wav");
+        audio[0].pause();
       }
     });
   }
