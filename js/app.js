@@ -30,7 +30,6 @@ $(document).ready(function() {
     $("#a, #b, #c, #d, #e").on("click", function() {
         animate(this.id);
         audio[0].play();
-        console.log(settings.speed);
     });
   }
   //run the game
@@ -126,13 +125,11 @@ $(document).ready(function() {
           settings.clicked = 0;
           $("#start").trigger("click");
         } else {
-            console.log("Right!");
             settings.clicked++;
         }
         //Increment the gameRound variable and apply fail conditions to the game changing the player and saving the highscore
       } else {
           settings.gameRound++;
-          console.log("Wrong");
           displayHighscores();
           $("#fail").html('Player ' + settings.nextPlayer + ' Click here to start');
           //change next player display text
