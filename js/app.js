@@ -116,7 +116,11 @@ $(document).ready(function() {
 
   //------------------------------------------------------
 
-  //function to get check user input 
+  //function to get check user input
+  //first IF statement: If the key clicked is equal to the number of the 'clicked' variable and is equal to the same number in the sequence array
+  //second IF statement: if the number in the 'clicked' variable is equal one less than the length of the sequence, the 'clicked' variable is set to 0 and the start div will be triggered on click otherwise the if the key clicked is equal to the key in the sequence and that key is clicked in the same order as in the array then proceed onto the next round, increment 'clicked' variable
+  //second Else statement: increment the gameRound variable and apply fail conditions to the game changing the player and saving the highscore
+
   function listen() {
   	$("#a, #b, #c, #d, #e").on("mousedown", function() {
       if (this.id == settings.sequence[settings.clicked]) {
@@ -271,7 +275,7 @@ $(document).ready(function() {
       settings.highScoreSaveP2 = 0;
       $("#finalScore").html("");
     }
-    //compare the scores of the first and second rounds and display the winner
+    //compare the scores of the first and second rounds and displays the winner, every two rounds
     if((settings.highScoreSaveP1 > settings.highScoreSaveP2) && settings.gameRound == 2) {
       $("#finalScore").html("Player 1 Wins");
     } else if ((settings.highScoreSaveP2 > settings.highScoreSaveP1) && settings.gameRound == 2){

@@ -201,7 +201,7 @@ span:nth-child(4) {
     transform: rotate(-225deg);
 }
 
-/*Media Queries*/
+/*---------------------Media Queries-------------------*/
 @media screen and (max-width: 600px) { 
 
   .keys {
@@ -216,20 +216,8 @@ span:nth-child(4) {
     margin-bottom: 4rem;
     font-size: 0;
   }
-  
+
   #keyboard {
     padding-left: 0.5rem;
   }
-
 }
-
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767px) { ... }
-
-/* Medium devices (tablets, less than 992px) */
-@media (max-width: 991px) { ... }
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199px) { ... }
-
-/* Extra large devices (large desktops)
- No media query since the extra-large breakpoint has no upper bound on its width */
