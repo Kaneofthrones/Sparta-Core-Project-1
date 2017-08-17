@@ -13,7 +13,8 @@ var settings = {
     player: 1,
     nextPlayer: 2,
     highScoreSaveP1: 0,
-    highScoreSaveP2: 0
+    highScoreSaveP2: 0,
+    gameRound: 0
 }
 
 //----------------------------------------------------
@@ -123,18 +124,19 @@ $(document).ready(function() {
           $("#a, #b, #c, #d, #e").off("mousedown");
           settings.clicked = 0;
           $("#start").trigger("click");
-
         } else {
             console.log("Right!");
             settings.clicked++;
         }
       } else {
+          settings.gameRound++;
           console.log("Wrong");
-          console.log(settings.player);
+          displayHighscores();
           $("#fail").html('Player ' + settings.nextPlayer + ' Click here to start');
           $(".popups").show(); 
           $("#count").hide(); 
-          $("#wait").hide();         
+          $("#wait").hide();
+          $("#finalScore").show();         
           $("#showHighScore").html('Player ' + settings.player + '  Highscore:  ' + settings.highScore);
           $("#showCurrentPlayer").hide();
           playAudio(); 
@@ -234,6 +236,7 @@ $(document).ready(function() {
       $(".popups").hide();
       $("#count").show();
       $("#wait").show();
+      $("#finalScore").hide();
       resetSettings();
       $("#start").trigger("click");
     });
@@ -249,5 +252,35 @@ $(document).ready(function() {
     settings.playNumber = 0;
     settings.speed = 1000;
     settings.clicked = 0;
+  }
+
+  //----------------------------------------------------
+
+  //function to display highscores throughout the game
+  function displayHighscores () {
+    //save the scores of both the first and second rounds
+    if(settings.gameRound == 1) {
+      settings.highScoreSaveP1 = settings.highScore;
+    } else if(settings.gameRound == 2) {
+      settings.highScoreSaveP2 = settings.highScore;
+    }
+
+    //reset the game round after every two rounds, including the highScores
+    if(settings.gameRound > 2) {
+      settings.gameRound = 1;
+      settings.highScoreSaveP1 = 0;
+      settings.highScoreSaveP2 = 0;
+      $("#finalScore").html("");
+    }
+    console.log(settings.gameRound);
+
+    //compare the scores of the first and second rounds and display the winner
+    if((settings.highScoreSaveP1 > settings.highScoreSaveP2) && settings.gameRound == 2) {
+      $("#finalScore").html("Player 1 Wins");
+    } else if ((settings.highScoreSaveP2 > settings.highScoreSaveP1) && settings.gameRound == 2){
+      $("#finalScore").html("Player 2 Wins");
+    } else if((settings.highScoreSaveP2 == settings.highScoreSaveP1) && settings.gameRound == 2) {
+      $("#finalScore").html("Draw");
+    }
   }
 }); 

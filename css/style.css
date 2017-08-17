@@ -29,6 +29,11 @@ audio {
   display:none;
 }
 
+.borders {
+  border: 4px solid #F3A712;
+  border-radius: 3rem;
+}
+
 #start {
   display:block;
   text-align:center;
@@ -38,8 +43,6 @@ audio {
   font-size:1.8rem;
   color: rgb(240,240,200);
   padding-top:0.6rem;  
-  border: 3px solid #F3A712;
-  border-radius: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -56,8 +59,6 @@ audio {
   font-size: 1.8rem;
   color: #ffffff;
   display: none; 
-  border: 4px solid #F3A712;
-  border-radius: 3rem;
   word-wrap: break-word;
 }
 
@@ -115,8 +116,6 @@ audio {
 
 #infoScreen {
   background-color: rgba(10,10,10,0);
-  border: 3px solid #F3A712;
-  border-radius: 2rem;
   overflow: scroll;
   height: 12rem;
   color: #d3d3d3;
@@ -130,12 +129,13 @@ audio {
   padding-bottom: 0.2rem
 }
 
-#wait {
+.textDisplay {
   display: inline-block;
   height: 1rem;
   font-size: 1.8rem;
   text-align: center;
   color: rgb(240,240,200);
+  padding-right: 2rem;
 }
 
 /*----------------------Arrow Animation----------------------*/
