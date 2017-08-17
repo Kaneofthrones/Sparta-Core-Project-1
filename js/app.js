@@ -137,6 +137,10 @@ $(document).ready(function() {
           console.log("Wrong");
           displayHighscores();
           $("#fail").html('Player ' + settings.nextPlayer + ' Click here to start');
+          //change Next player display text
+          if(settings.gameRound == 2) {
+            $("#fail").html("Start new game");
+          }
           $(".popups").show(); 
           $("#count").hide(); 
           $("#wait").hide();
@@ -260,7 +264,7 @@ $(document).ready(function() {
 
   //----------------------------------------------------
 
-  //function to display highscores throughout the game
+  //function to display highscores at the end of each game
   function displayHighscores () {
     //save the scores of both the first and second rounds
     if(settings.gameRound == 1) {
