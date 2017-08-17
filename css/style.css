@@ -1,20 +1,3 @@
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575px) { 
-  .keys {
-    width: 12%;
-  }
-}
-
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767px) { ... }
-
-/* Medium devices (tablets, less than 992px) */
-@media (min-width: 991px) { ... }
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199px) { ... }
-
-/* Extra large devices (large desktops)
- No media query since the extra-large breakpoint has no upper bound on its width */
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto|Saira");
 
@@ -93,8 +76,9 @@ audio {
   text-transform: uppercase;
   text-align: center;
   padding-top: 1rem;
-  color: rgb(240,240,200);
+  color: #54F2F2;
   font-size: 1.8rem;
+  margin-bottom: 3rem;
 }
 
 #count {
@@ -216,3 +200,33 @@ span:nth-child(4) {
 .round:hover span:nth-child(4) {
     transform: rotate(-225deg);
 }
+
+/*Media Queries*/
+@media screen and (max-width: 600px) { 
+.keys {
+  width: 18%;
+  padding-left: 0.6rem;
+  font-size: 1.6rem;
+  border: 1rem solid;
+  border-color: rgba(29, 140, 163, 0.8);
+  border-bottom: none;
+  border-radius: 3rem;
+  margin: 0.1rem;
+  margin-bottom: 4rem;
+  font-size: 0;
+}
+#keyboard {
+  padding-left: 0.5rem;
+}
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767px) { ... }
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991px) { ... }
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199px) { ... }
+
+/* Extra large devices (large desktops)
+ No media query since the extra-large breakpoint has no upper bound on its width */
