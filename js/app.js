@@ -21,6 +21,7 @@ var settings = {
 
 $(document).ready(function() {
   var audio = $("#sound");
+  var bgAudio = $("#bgMusic");
 
   //---------------------------------------------------
 
@@ -158,7 +159,7 @@ $(document).ready(function() {
 
   //function to load and play audio
   function playAudio() {
-    audio[0].pause();
+    //audio[0].pause();
     audio[0].load();
     audio[0].play();
   }
@@ -211,12 +212,13 @@ $(document).ready(function() {
           }, 200);
       }  //M key
       else if(event.keyCode == 77) {
-        $("#tune").attr("src", "assets/scale-a6.wav");
-        playAudio();
+        $("#tune2").attr("src", "assets/Benedek_Breeze.mp3");
+        bgAudio[0].load();
+        bgAudio[0].play();
       }
       else if(event.keyCode == 80) {
-        $("#tune").attr("src", "assets/scale-a6.wav");
         audio[0].pause();
+        bgAudio[0].pause();
       }
     });
   }
