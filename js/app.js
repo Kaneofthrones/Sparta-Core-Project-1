@@ -88,7 +88,7 @@ $(document).ready(function() {
   function makeId() {
     var text = "";
     var possible = "abcde";
-    
+
     for (var i = 0; i < 1; i++) {
       text += possible.charAt(Math.floor(Math.random() * possible.length));
       settings.sequence.push(text);
@@ -157,7 +157,7 @@ $(document).ready(function() {
 
   //-------------------------------------------------------
 
-    //keyboard input 
+  //keyboard input 
   function keyInput(){
 	  document.addEventListener('keydown', function(event) {
 		//starting at the A key moving to the right
@@ -264,7 +264,6 @@ $(document).ready(function() {
     } else if(settings.gameRound == 2) {
       settings.highScoreSaveP2 = settings.highScore;
     }
-
     //reset the game round after every two rounds, including the highScores
     if(settings.gameRound > 2) {
       settings.gameRound = 1;
@@ -272,7 +271,6 @@ $(document).ready(function() {
       settings.highScoreSaveP2 = 0;
       $("#finalScore").html("");
     }
-
     //compare the scores of the first and second rounds and display the winner
     if((settings.highScoreSaveP1 > settings.highScoreSaveP2) && settings.gameRound == 2) {
       $("#finalScore").html("Player 1 Wins");
