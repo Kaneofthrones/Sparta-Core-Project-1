@@ -203,21 +203,24 @@ span:nth-child(4) {
 
 /*Media Queries*/
 @media screen and (max-width: 600px) { 
-.keys {
-  width: 18%;
-  padding-left: 0.6rem;
-  font-size: 1.6rem;
-  border: 1rem solid;
-  border-color: rgba(29, 140, 163, 0.8);
-  border-bottom: none;
-  border-radius: 3rem;
-  margin: 0.1rem;
-  margin-bottom: 4rem;
-  font-size: 0;
-}
-#keyboard {
-  padding-left: 0.5rem;
-}
+
+  .keys {
+    width: 18%;
+    padding-left: 0.6rem;
+    font-size: 1.6rem;
+    border: 1rem solid;
+    border-color: rgba(29, 140, 163, 0.8);
+    border-bottom: none;
+    border-radius: 3rem;
+    margin: 0.1rem;
+    margin-bottom: 4rem;
+    font-size: 0;
+  }
+  
+  #keyboard {
+    padding-left: 0.5rem;
+  }
+
 }
 
 /* Small devices (landscape phones, less than 768px) */
