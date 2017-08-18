@@ -153,8 +153,10 @@ $(document).ready(function() {
 
   //function to load and play audio
   function playAudio() {
+    setTimeout(function() {
+      audio[0].play();
+    }, 50);
     audio[0].load();
-    audio[0].play();
   }
 
   //-------------------------------------------------------
