@@ -19,6 +19,7 @@ My first project for Sparta
 * [How to play the game](#how)
 * [Screenshots of the game](#ss)
 * [Future additions](#future)
+* [Mobile demo video](#demovid)
 * [Livelink](#ll)
 
 ***
@@ -152,4 +153,10 @@ There are several things I could add to this game in the future, some of these a
 
 ***
 
-##<a name="ll"></a>[Livelink] (https://kaneofthrones.github.io/Sparta-Core-Project-1/)
+##<a name="demovid"> </a> Demo Video
+
+[Demo Video](https://youtu.be/uHQOhZxQpss)
+
+***
+
+##<a name="ll"></a>[Livelink] (https://youtu.be/2ISwLyPpLls)
